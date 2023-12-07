@@ -108,6 +108,10 @@ printf "🔌  Installing Zap\n"
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep --branch release-v1
 
 printf "👽  Installing AstroNvim\n"
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 printf "🐗  Stow dotfiles\n" # Some of those not work its good to manually stow them
