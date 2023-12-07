@@ -35,7 +35,7 @@ window:
     #   bar buttons
     # - `buttonless`: Window with title bar with transparent background and no
     #   title bar buttons
-    decorations: buttonless
+    decorations: transparent
 
 scrolling:
     # How many lines of scrollback to keep,
@@ -84,7 +84,7 @@ font:
         # style: Italic
 
     # Point size of the font
-    size: 13.0
+    size: 15.0
 
     # Offset is the extra space around each character. offset.y can be thought of
     # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -102,11 +102,6 @@ font:
     # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
     # screens and make reading text a little easier.
     scale_with_dpi: true
-
-    # OS X only: use thin stroke font rendering. Thin strokes are suitable
-    # for retina displays, but for non-retina you probably want this set to
-    # false.
-    use_thin_strokes: true
 
 # Should display the render timer
 #render_timer: false

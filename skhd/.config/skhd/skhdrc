@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : /Applications/Alacritty.app
+cmd - return : open -na /Applications/Alacritty.app
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -33,13 +33,13 @@ shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 shift + cmd - n : yabai -m space --create && \
-                  index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                  yabai -m window --space "${index}" && \
-                  yabai -m space --focus "${index}"
+                index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
+                yabai -m window --space "${index}" && \
+                yabai -m space --focus "${index}"
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
 cmd + alt - n : yabai -m space --create && \
-                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
                 yabai -m space --focus "${index}"
 
 # destroy desktop
@@ -59,6 +59,7 @@ cmd + alt - 7 : yabai -m space --focus 7
 cmd + alt - 8 : yabai -m space --focus 8
 cmd + alt - 9 : yabai -m space --focus 9
 cmd + alt - 0 : yabai -m space --focus 10
+
 
 # send window to desktop and follow focus
 shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent

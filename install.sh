@@ -17,9 +17,9 @@ install_brew() {
 
 create_dirs() {
     declare -a dirs=(
-        "$HOME/Downloads/torrents"
-        "$HOME/Desktop/screenshots"
-        "$HOME/dev"
+        "$HOME/Documents/screenshots"
+        "$HOME/Documents/Development"
+        "$HOME/Documents/School"
     )
 
     for i in "${dirs[@]}"; do
@@ -43,11 +43,9 @@ build_xcode() {
 
 install_app_store_apps() {
     mas install 497799835 # Xcode
-    mas install 1451685025 # WireGuard
-    mas install 1509590766 # Mutekey
-    mas install 1545870783 # System Color Picker
-    mas install 1450874784 # Transporter
-    mas install 1351639930 # Gifski
+    # mas install 1451685025 # WireGuard
+    # mas install 1545870783 # System Color Picker
+    # mas install 1351639930 # Gifski (video to gif)
 }
 
 printf "🗄  Creating directories\n"
@@ -59,12 +57,18 @@ build_xcode
 printf "🍺  Installing Homebrew packages\n"
 install_brew
 
+printf "Installing yabai\n"
+brew install koekeishiya/formulae/yabai --HEAD
+codesign -fs 'yabai-cert' $(brew --prefix yabai)/bin/yabai
+
 printf "🛍️  Installing Mac App Store apps\n"
 install_app_store_apps
 
 printf "💻  Set macOS preferences\n"
 ./macos/.macos
 
+
+# Dno why this is here will figure out later
 printf "🌈  Configure Ruby\n"
 ruby-install ruby-2.7.4 1>/dev/null
 source /opt/homebrew/opt/chruby/share/chruby.sh
@@ -92,17 +96,25 @@ sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/lo
 n lts
 
 printf "🐍  Configure Python\n"
-# setup pyenv / global python to 3.10.x
-pyenv install 3.10 1>/dev/null
-pyenv global 3.10 1>/dev/null
+# setup pyenv / global python to 3.12.x
+pyenv install 3.12 1>/dev/null
+pyenv global 3.12 1>/dev/null
 # dont set conda clutter in zshrc
 conda config --set auto_activate_base false
 
-printf "👽  Installing vim-plug\n"
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# installing zap plugin manager
+printf "🔌  Installing Zap\n"
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep --branch release-v1
 
-printf "🐗  Stow dotfiles\n"
-stow alacritty colorls fzf git nvim skhd starship tmux vim yabai z zsh
+printf "👽  Installing AstroNvim\n"
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+printf "🐗  Stow dotfiles\n" # Some of those not work its good to manually stow them
+stow alacritty colorls fzf git nvim skhd starship yabai zsh Documents
+
+# reload zsh
+source ~/.zshrc
 
 printf "✨  Done!\n"
+printf "Remember to configure yabai scripting addition 'https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)' and install yabai indicator\n"
+printf "Some changes may require a logout/restart to take effect.\n"

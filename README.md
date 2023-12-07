@@ -17,9 +17,7 @@ Dotfiles for my M1 Macbook Air Sonoma
 
 To install:
 
-`curl -L replace this(https://git.io/JeA7g) | sh`
-
-This expands to [run.sh](https://github.com/gretzky/dotfiles/blob/master/run.sh) which will fetch this repo and run the install script.
+`curl -L https://raw.githubusercontent.com/itaprac/dotfiles/main/run.sh | sh`
 
 ## File overview
 
@@ -28,13 +26,10 @@ This expands to [run.sh](https://github.com/gretzky/dotfiles/blob/master/run.sh)
     -   [Alacritty](./alacritty)
     -   [colorls](./colorls)
     -   [fzf](./fzf)
-    -   [neovim](./nvim)
+    -   [AstroNvim](https://github.com/AstroNvim/AstroNvim)
     -   [skhd](./skhd)
     -   [starship](./starship)
-    -   [tmux](./tmux)
-    -   [VSCode](./vscode)
     -   [yabai](./yabai)
-    -   [z](./z)
 -   Shell environment configs:
     -   [Antigen](https://github.com/zsh-users/antigen) for zsh plugin management
     -   [`.zshrc`](./zsh/.zshrc)
@@ -43,11 +38,10 @@ This expands to [run.sh](https://github.com/gretzky/dotfiles/blob/master/run.sh)
     -   [`.aliases`](./zsh/.aliases)
     -   [`.exports`](./zsh/.exports)
 -   [`Brewfile`](./Brewfile) - contains all homebrew packages, casks, and mac appstore apps
--   [VSCode settings](./vscode/settings.json)
 
 The install script will also setup Python and Node versions/environments:
 
--   [pyenv](https://github.com/pyenv/pyenv) sets the global Python version to 3.10
+-   [pyenv](https://github.com/pyenv/pyenv) sets the global Python version to 3.12
 -   [n](https://github.com/tj/n) sets the global Node version to LTS
 
 ### Customization
