@@ -3,7 +3,8 @@
 Dotfiles for my M1 Macbook Air Sonoma
 
 ![zsh with starship prompt and colorls](https://user-images.githubusercontent.com/15176096/71632895-ff0d0980-2bde-11ea-966f-65e5d564361f.png)
-![vim and tmux](https://user-images.githubusercontent.com/15176096/71633424-2f09dc00-2be2-11ea-9c15-a4f492b7ea68.png)
+![vim and tmux](![CleanShot 2023-12-07 at 10  59 43](https://github.com/itaprac/dotfiles/assets/85196132/5da7fc42-c145-4180-8550-3469a7d579b8)
+
 
 -   Terminal: [Alacritty](https://github.com/jwilm/alacritty) using zsh w/ [starship prompt](https://starship.rs/) and [color-ls](https://github.com/athityakumar/colorls)
 -   Window management: [yabai](https://github.com/koekeishiya/yabai)
