@@ -60,8 +60,6 @@ brew "koekeishiya/formulae/skhd"
 brew "btop"
 brew "bat"
 
-cask "adoptopenjdk8"
-cask "adoptopenjdk8-jre"
 cask "alacritty"
 # cask "alfred" not using yet
 # cask "dozer" can use instaed of bartender
@@ -80,4 +78,4 @@ cask "alt-tab"
 cask "discord"
 
 # install gradle here, since by now the jdk is installed
-brew "gradle"
+# brew "gradle"
