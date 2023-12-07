@@ -8,8 +8,8 @@ Dotfiles for my M1 Macbook Air Sonoma
 -   Terminal: [Alacritty](https://github.com/jwilm/alacritty) using zsh w/ [starship prompt](https://starship.rs/) and [color-ls](https://github.com/athityakumar/colorls)
 -   Window management: [yabai](https://github.com/koekeishiya/yabai)
 -   Hotkeys: [skhd](https://github.com/koekeishiya/skhd)
--   Vim: [neovim](https://neovim.io/) with [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins
--   Tools: [tmux](https://github.com/tmux/tmux), [z](https://github.com/rupa/z), [fzf](https://github.com/junegunn/fzf)
+-   Vim: [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+-   Tools: [fzf](https://github.com/junegunn/fzf)
 
 ## Installation
 
@@ -31,7 +31,7 @@ To install:
     -   [starship](./starship)
     -   [yabai](./yabai)
 -   Shell environment configs:
-    -   [Antigen](https://github.com/zsh-users/antigen) for zsh plugin management
+    -   [zap](https://github.com/zap-zsh/zap) for zsh plugin management
     -   [`.zshrc`](./zsh/.zshrc)
     -   [`.zlogin.sh`](./zsh/.zlogin.sh)
     -   [`.zshenv.sh`](./zsh/.zshenv.sh)
