@@ -58,6 +58,7 @@ brew "zplug"
 brew "zsh"
 brew "koekeishiya/formulae/skhd"
 brew "btop"
+brew "bat"
 
 cask "adoptopenjdk8"
 cask "adoptopenjdk8-jre"
