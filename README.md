@@ -58,3 +58,5 @@ The install script will also setup Python and Node versions/environments:
     -   Pick your desired color and get its RGB value (ex. pink is `255,105,180`)
     -   Take each value and divide it by 255 (ex. pink is now `1, 0.41176470588, 0.70588235294`)
     -   Put them into RGB order (ex. pink is `"1 0.41176470588 0.70588235294"`)
+
+Credits: [gretzky/dotfiles](https://github.com/gretzky/dotfiles)
