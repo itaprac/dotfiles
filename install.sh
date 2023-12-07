@@ -68,19 +68,19 @@ printf "💻  Set macOS preferences\n"
 ./macos/.macos
 
 
-# Dno why this is here will figure out later
+# Dno why this is here, but it creates errors and i cba fixing it since idont use ruby anywas
 printf "🌈  Configure Ruby\n"
 ruby-install ruby-2.7.4 1>/dev/null
-source /opt/homebrew/opt/chruby/share/chruby.sh
-source /opt/homebrew/opt/chruby/share/auto.sh
-chruby ruby-2.7.4 1>/dev/null
-# disable downloading documentation
-echo "gem: --no-document" >> ~/.gemrc
-gem update --system 1>/dev/null
-gem install bundler 1>/dev/null
-# configure bundler to take advantage of cores
-num_cores=$(sysctl -n hw.cpu)
-bundle config set --global jobs $((num_cores - 1)) 1>/dev/null
+# source /opt/homebrew/opt/chruby/share/chruby.sh
+# source /opt/homebrew/opt/chruby/share/auto.sh
+# chruby ruby-2.7.4 1>/dev/null
+# # disable downloading documentation
+# echo "gem: --no-document" >> ~/.gemrc
+# gem update --system 1>/dev/null
+# gem install bundler 1>/dev/null
+# # configure bundler to take advantage of cores
+# num_cores=$(sysctl -n hw.cpu)
+# bundle config set --global jobs $((num_cores - 1)) 1>/dev/null
 # install colorls
 gem install clocale colorls 1>/dev/null
 
