@@ -42,7 +42,7 @@ build_xcode() {
 }
 
 install_app_store_apps() {
-    mas install 497799835 # Xcode
+    # mas install 497799835 # Xcode
     # mas install 1451685025 # WireGuard
     # mas install 1545870783 # System Color Picker
     # mas install 1351639930 # Gifski (video to gif)
@@ -72,16 +72,16 @@ printf "💻  Set macOS preferences\n"
 # Dno why this is here, but it creates errors and i cba fixing it since idont use ruby anywas
 printf "🌈  Configure Ruby\n"
 ruby-install ruby-2.7.4 1>/dev/null
-# source /opt/homebrew/opt/chruby/share/chruby.sh
-# source /opt/homebrew/opt/chruby/share/auto.sh
-# chruby ruby-2.7.4 1>/dev/null
-# # disable downloading documentation
-# echo "gem: --no-document" >> ~/.gemrc
-# gem update --system 1>/dev/null
-# gem install bundler 1>/dev/null
-# # configure bundler to take advantage of cores
-# num_cores=$(sysctl -n hw.cpu)
-# bundle config set --global jobs $((num_cores - 1)) 1>/dev/null
+source /opt/homebrew/opt/chruby/share/chruby.sh
+source /opt/homebrew/opt/chruby/share/auto.sh
+chruby ruby-2.7.4 1>/dev/null
+# disable downloading documentation
+echo "gem: --no-document" >> ~/.gemrc
+gem update --system 1>/dev/null
+gem install bundler 1>/dev/null
+# configure bundler to take advantage of cores
+num_cores=$(sysctl -n hw.cpu)
+bundle config set --global jobs $((num_cores - 1)) 1>/dev/null
 # install colorls
 gem install clocale colorls 1>/dev/null
 
