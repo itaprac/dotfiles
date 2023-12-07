@@ -68,6 +68,7 @@ install_app_store_apps
 printf "💻  Set macOS preferences\n"
 ./macos/.macos
 
+sudo xcodebuild -license accept
 
 # Dno why this is here, but it creates errors and i cba fixing it since idont use ruby anywas
 printf "🌈  Configure Ruby\n"
