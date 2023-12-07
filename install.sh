@@ -110,7 +110,8 @@ printf "👽  Installing AstroNvim\n"
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 printf "🐗  Stow dotfiles\n" # Some of those not work its good to manually stow them
-stow alacritty colorls fzf git nvim skhd starship yabai zsh Documents
+cd dotfiles
+stow alacritty colorls fzf skhd starship yabai zsh Documents
 
 # reload zsh
 source ~/.zshrc
