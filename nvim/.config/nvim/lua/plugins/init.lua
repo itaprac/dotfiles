@@ -1,5 +1,14 @@
 return {
 
+  -- HOP
+  {
+    "smoka7/hop.nvim",
+    version = "*",
+    opts = {
+      keys = "etovxqpdygfblzhckisuran",
+    },
+  },
+
   -- fast formatter
   {
     "stevearc/conform.nvim",

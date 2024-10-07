@@ -101,12 +101,12 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Buffer vertical split" }
 )
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>h",
-  ":split<CR>",
-  { noremap = true, silent = true, desc = "Buffer horizontal split" }
-)
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<leader>h",
+--   ":split<CR>",
+--   { noremap = true, silent = true, desc = "Buffer horizontal split" }
+-- )
 
 -- Auto-session keybindings
 map("n", "<leader>ss", ":SessionSave<CR>", { noremap = true, silent = true, desc = "Save session (cwd)" })
@@ -202,6 +202,35 @@ map("n", "<leader>lst", "<cmd>Leet stats<CR>", { desc = "Toggle Stats Visibility
 
 -- Cache update
 -- map("n", "<leader>lcch", "<cmd>Leet cache update<CR>", { desc = "Update Cache", noremap = true, silent = true })
+
+-- HOP
+local hop = require "hop"
+local directions = require("hop.hint").HintDirection
+vim.keymap.set("", "f", function()
+  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true }
+end, { remap = true })
+vim.keymap.set("", "F", function()
+  hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true }
+end, { remap = true })
+vim.keymap.set("", "t", function()
+  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }
+end, { remap = true })
+vim.keymap.set("", "T", function()
+  hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }
+end, { remap = true })
+
+map("n", "<leader>hw", "<cmd>HopWord<CR>", { desc = "Hop Word" })
+map("n", "<leader>hc", "<cmd>HopCamelCase<CR>", { desc = "Hop CamelCase" })
+map("n", "<leader>hh", "<cmd>HopChar1<CR>", { desc = "Hop Char1" })
+map("n", "<leader>h1", "<cmd>HopChar1<CR>", { desc = "Hop Char1" })
+map("n", "<leader>h2", "<cmd>HopChar2<CR>", { desc = "Hop Char2" })
+map("n", "<leader>hp", "<cmd>HopPattern<CR>", { desc = "Hop Pattern" })
+map("n", "<leader>hl", "<cmd>HopLine<CR>", { desc = "Hop Line" })
+map("n", "<leader>hs", "<cmd>HopLineStart<CR>", { desc = "Hop Line Start" })
+map("n", "<leader>ha", "<cmd>HopAnywhere<CR>", { desc = "Hop Anywhere" })
+map("n", "<leader>hn", "<cmd>HopNodes<CR>", { desc = "Hop Nodes" })
+map("n", "<leader>hp", "<cmd>HopPaste<CR>", { desc = "Hop Paste" })
+map("n", "<leader>hy", "<cmd>HopYankChar1<CR>", { desc = "Hop Yank Char1" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- -- Copilot Chat Keybindings
